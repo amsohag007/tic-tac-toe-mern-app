@@ -6,6 +6,7 @@ import Square from "./Square.js";
 import { resetBoardAction } from "../actions/boardActions";
 import { resetPlaerAction } from "../actions/playerActions.js";
 import { resetResultAction } from "../actions/resultsAction";
+import Activities from "./Activities.js";
 
 function Board(props) {
   const { board } = props;
@@ -34,9 +35,7 @@ function Board(props) {
       </button>
 
       <Summary />
-      <p>
-        <strong>Activity log:</strong>:
-      </p>
+      <Activities log={"The game has started"} />
     </Fragment>
   );
 }

@@ -3,9 +3,15 @@ import dotenv from "dotenv";
 import colors from "colors";
 import connectDB from "./config/db.js";
 
+import activitiesRoutes from "./routes/activitiesRoutes.js";
+
 const app = express();
 dotenv.config();
 connectDB();
+
+app.use(express.json());
+
+app.use("/api/activities", activitiesRoutes);
 
 app.get("/", (req, res) => {
   res.send("api is running");
