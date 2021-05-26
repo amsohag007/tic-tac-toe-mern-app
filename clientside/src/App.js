@@ -1,7 +1,6 @@
 import React from "react";
-import "./App.css";
 
-import Board from "./components/Board/Board.jsx";
+import Board from "./components/Board.js";
 
 function App() {
   return (

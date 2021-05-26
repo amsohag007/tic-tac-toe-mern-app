@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 import Cross from "./Cross.js";
 import Zero from "./Zero.js";
-import { drawXAction, drawOAction } from "../../../actions/boardActions.js";
-import { toggleTurnAction } from "../../../actions/playerActions.js";
+import { drawXAction, drawOAction } from "../actions/boardActions.js";
+import { toggleTurnAction } from "../actions/playerActions.js";
 
 function Square(props) {
   const { symbol, index, draw, players, board, toggleTurn } = props;
