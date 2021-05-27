@@ -27,7 +27,7 @@ export const drawOAction = (cellIndex) => async (dispatch, getState) => {
     cellIndex,
   });
 
-  console.log("x has pressed:" + cellIndex);
+  console.log("O has pressed:" + cellIndex);
   axios({
     method: "post",
     url: "/api/activities",
@@ -51,4 +51,5 @@ export const resetBoardAction = () => async (dispatch) => {
     method: "delete",
     url: "/api/activities",
   });
+  console.log("activities removed");
 };

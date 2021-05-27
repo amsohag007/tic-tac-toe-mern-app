@@ -6,7 +6,7 @@
 }
 
 .cell:hover {
-  background: lightgray;
+  background: lightgreen;
 }
 
 .disabled {
@@ -14,7 +14,7 @@
 }
 
 .disabled:hover {
-  background: white;
+  background: red;
 }
 
 .symbol {
