@@ -1,8 +1,43 @@
-# tic-tac-toe-mern-app
+# Tic Tac Toe MERN App
 
-To run:
-step1: npm install
-step2: cd to root folder
-step3: npm run client for only frontend
-step4: npm run server for only backend
-step5: npm run dev for running concurrentl
+Tic Tac Toe is a MERN stack gaming application.
+
+## Technology 
+
+React
+Redux
+Bootstrap
+nodeJS
+expressJS
+MongoDB
+
+## Installation
+
+Use the package manager npm to install Tic Tac Toe MERN App.
+
+```bash
+npm install
+```
+
+## Usage
+
+For running only frontend:
+```bash
+npm run client
+```
+
+For running only backtend:
+```bash
+npm run server
+```
+
+For running frontend & backtend concurrently:
+```bash
+npm run dev
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
