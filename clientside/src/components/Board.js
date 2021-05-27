@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 import Summary from "./Summary.js";
 import Square from "./Square.js";
 import { resetBoardAction } from "../actions/boardActions";
@@ -12,12 +13,24 @@ function Board(props) {
   const { board } = props;
   const dispatch = useDispatch();
 
+  const [activitiesLog, setActivitiesLog] = useState([]);
+
   const handleClick = () => {
     dispatch(resetBoardAction());
     dispatch(resetPlaerAction());
     dispatch(resetResultAction());
   };
 
+  useEffect(() => {
+    axios
+      .get("/api/activities")
+      .then((res) => {
+        setActivitiesLog(res.data);
+        // console.log(activitiesLog);
+      })
+      .catch((err) => console.log(err));
+  }, [dispatch]);
+  // console.log(activitiesLog);
   return (
     <Fragment>
       <div id="board" className="mt-4 d-flex flex-wrap">
@@ -33,9 +46,11 @@ function Board(props) {
       >
         New game
       </button>
-
       <Summary />
-      <Activities log={"The game has started"} />
+      <h3>Activity log:</h3>
+      {activitiesLog.map((ac) => (
+        <Activities log={ac.activity} player={ac.player} />
+      ))}
     </Fragment>
   );
 }
