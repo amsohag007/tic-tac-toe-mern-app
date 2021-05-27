@@ -4,7 +4,7 @@ function Activities(props) {
   return (
     <div>
       <p>
-        {props.player}:{props.log}
+        Player {props.player} {props.log} {props.cell}
       </p>
     </div>
   );

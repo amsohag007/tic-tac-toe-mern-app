@@ -5,17 +5,19 @@ import asyncHandler from "express-async-handler";
 // @route   POST /api/activities
 
 const addActivities = asyncHandler(async (req, res) => {
-  const { activity, player } = req.body;
+  const { activity, player, cell } = req.body;
 
   const log = await Activities.create({
     activity,
     player,
+    cell,
   });
 
   if (log) {
     res.status(201).json({
       active: log.activity,
       player: log.player,
+      cell: log.cell,
     });
   } else {
     res.status(400);

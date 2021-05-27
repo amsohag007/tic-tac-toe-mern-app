@@ -9,6 +9,9 @@ const activitiesSchema = mongoose.Schema(
     player: {
       type: String,
     },
+    cell: {
+      type: Number,
+    },
   },
   {
     timestamps: true,

@@ -7,12 +7,14 @@ export const drawXAction = (cellIndex) => async (dispatch, getState) => {
     cellIndex,
   });
 
+  console.log("x has pressed:" + cellIndex);
   axios({
     method: "post",
     url: "/api/activities",
     data: {
-      activity: "press {cellIndex}",
+      activity: "has pressed cell index",
       player: "X",
+      cell: cellIndex,
     },
   });
 
@@ -25,12 +27,14 @@ export const drawOAction = (cellIndex) => async (dispatch, getState) => {
     cellIndex,
   });
 
+  console.log("x has pressed:" + cellIndex);
   axios({
     method: "post",
     url: "/api/activities",
     data: {
-      activity: "press {cellIndex}",
-      player: "Y",
+      activity: "has pressed cell index",
+      player: "O",
+      cell: cellIndex,
     },
   });
 
@@ -41,5 +45,10 @@ export const resetBoardAction = () => async (dispatch) => {
   localStorage.removeItem("board");
   dispatch({
     type: RESET_BOARD,
+  });
+
+  axios({
+    method: "delete",
+    url: "/api/activities",
   });
 };

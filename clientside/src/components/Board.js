@@ -29,7 +29,7 @@ function Board(props) {
         // console.log(activitiesLog);
       })
       .catch((err) => console.log(err));
-  }, [dispatch]);
+  }, [board]);
   // console.log(activitiesLog);
   return (
     <Fragment>
@@ -49,7 +49,7 @@ function Board(props) {
       <Summary />
       <h3>Activity log:</h3>
       {activitiesLog.map((ac) => (
-        <Activities log={ac.activity} player={ac.player} />
+        <Activities log={ac.activity} player={ac.player} cell={ac.cell} />
       ))}
     </Fragment>
   );
